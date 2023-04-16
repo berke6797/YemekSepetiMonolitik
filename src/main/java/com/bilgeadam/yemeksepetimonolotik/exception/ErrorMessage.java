@@ -1,0 +1,24 @@
+package com.bilgeadam.yemeksepetimonolotik.exception;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Component
+public class ErrorMessage {
+    private int code;
+    private String message;
+    private List<String> fields;
+    @Builder.Default
+    private LocalDateTime date = LocalDateTime.now();
+}
